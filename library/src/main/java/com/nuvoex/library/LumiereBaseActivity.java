@@ -21,7 +21,7 @@ import android.widget.TextView;
 import icepick.Icepick;
 import timber.log.Timber;
 
-public abstract class BaseActivity extends AppCompatActivity implements FragmentInterface,
+public abstract class LumiereBaseActivity extends AppCompatActivity implements FragmentInterface,
         NavigationView.OnNavigationItemSelectedListener {
 
     /**
@@ -169,7 +169,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
     }
 
     @Override
-    public void addFragment(BaseFragment fragmentToBeLoaded, boolean addToBackStack, String tag) {
+    public void addFragment(LumiereBaseFragment fragmentToBeLoaded, boolean addToBackStack, String tag) {
         boolean allowStateLoss = true;
 
         if (!getSupportFragmentManager().isDestroyed()) {
@@ -191,7 +191,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
     }
 
     @Override
-    public void replaceFragment(BaseFragment fragmentToBeLoaded, boolean addToBackStack, String tag) {
+    public void replaceFragment(LumiereBaseFragment fragmentToBeLoaded, boolean addToBackStack, String tag) {
         boolean allowStateLoss = true;
 
         if (!getSupportFragmentManager().isDestroyed()) {
@@ -297,7 +297,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Fragment
     }
 
     private void showProgressBarWithBackgroundColor(@ColorRes int color) {
-        mProgressBarContainer.setBackgroundColor(ContextCompat.getColor(BaseActivity.this, color));
+        mProgressBarContainer.setBackgroundColor(ContextCompat.getColor(LumiereBaseActivity.this, color));
         setContainerVisibility(true, false);
     }
 

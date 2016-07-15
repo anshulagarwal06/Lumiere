@@ -1,12 +1,11 @@
 package com.nuvoex.baseframework;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.nuvoex.library.BaseActivity;
+import com.nuvoex.library.LumiereBaseActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends LumiereBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

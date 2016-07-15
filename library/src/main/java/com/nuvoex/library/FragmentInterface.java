@@ -4,9 +4,9 @@ import android.support.annotation.ColorRes;
 
 public interface FragmentInterface {
 
-    void addFragment(BaseFragment fragment, boolean addToBackStack, String tag);
+    void addFragment(LumiereBaseFragment fragment, boolean addToBackStack, String tag);
 
-    void replaceFragment(BaseFragment fragment, boolean addToBackStack, String tag);
+    void replaceFragment(LumiereBaseFragment fragment, boolean addToBackStack, String tag);
 
     int getFrameLayoutId();
 
@@ -16,9 +16,9 @@ public interface FragmentInterface {
 
     void showProgressBar(@ColorRes int color);
 
-    void showNetworkError(BaseActivity.RetryApiCallback retryApiCallback);
+    void showNetworkError(LumiereBaseActivity.RetryApiCallback retryApiCallback);
 
-    void showGenericError(String message, BaseActivity.RetryApiCallback retryApiCallback);
+    void showGenericError(String message, LumiereBaseActivity.RetryApiCallback retryApiCallback);
 
     void showActivityContent();
 

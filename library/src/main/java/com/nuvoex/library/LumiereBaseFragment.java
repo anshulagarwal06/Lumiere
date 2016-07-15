@@ -12,7 +12,7 @@ import icepick.Icepick;
  * All Fragments must extend From BaseFragment.
  * This class adds support for saving state of the activity easily using Icepick and memory leak detection using Leakcanary.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class LumiereBaseFragment extends Fragment {
 
     private FragmentInterface mFragmentListener;
     protected Context mContext;
@@ -52,7 +52,7 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-       // RefWatcher refWatcher = JacksonApplication.getRefWatcher(getActivity());
+        // RefWatcher refWatcher = JacksonApplication.getRefWatcher(getActivity());
         //refWatcher.watch(this);
     }
 
