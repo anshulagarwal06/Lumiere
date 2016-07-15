@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navigation_drawer_header_height"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="?attr/colorPrimary"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/logo_width_height"
+        android:layout_height="@dimen/logo_width_height"
+        android:layout_gravity="center"
+        android:background="@drawable/nav_drawer_round_shape"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/nuvo_logo" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/img_logo"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/text_vendor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="NuvoEx Vendor"
+            style="@style/navDrawerName"/>
+
+        <TextView
+            android:id="@+id/text_vendor_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="9999888855"
+            style="@style/navDrawerPhone"/>
+    </LinearLayout>
+
+</RelativeLayout>

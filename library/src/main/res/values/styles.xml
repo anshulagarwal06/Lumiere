@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorButtonNormal">@color/color_accent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="navDrawerName">
+        <item name="android:textSize">@dimen/nav_drawer_name</item>
+        <item name="android:textColor">@color/nav_drawer_name</item>
+    </style>
+
+    <style name="navDrawerPhone">
+        <item name="android:textSize">@dimen/nav_drawer_phone</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="networkErrorTitle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black_54</item>
+        <item name="android:textSize">@dimen/nav_drawer_name</item>
+    </style>
+
+    <style name="networkErrorMessage" parent="networkErrorTitle">
+        <item name="android:textSize">@dimen/nav_drawer_phone</item>
+    </style>
+</resources>

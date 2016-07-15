@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">library</string>
+
+    <string name="network_error_title">Slow or no internet connection</string>
+    <string name="network_error_message"><![CDATA[Please wait & try again after a moment]]></string>
+
+    <!--Navigation drawer Items-->
+    <string name="nav_call_customer_care">Call Area Manager</string>
+    <string name="nav_logout">Logout</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+</resources>
