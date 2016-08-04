@@ -12,6 +12,8 @@ import com.nuvoex.library.permission.Permission.PermissionBuilder;
 
 public class MainActivity extends LumiereBaseActivity implements Permission.FragmentPermissionCallback {
 
+    private final static String TAG= MainActivity.class.getSimpleName();
+
     private static final int PHOTO_ACTIVITY_REQUEST_CARMERA_AND_READ_WRITE = 50;
     private static final String[] PHOTO_ACTIVITY_CAMERA_PERMISSIONS = {Manifest.permission.CAMERA};
 
@@ -57,19 +59,19 @@ public class MainActivity extends LumiereBaseActivity implements Permission.Frag
 
     @Override
     public void onPermissionGranted(int requestCode) {
-        Log.i("anshul", "onPermissionGranted : " + requestCode);
+        Log.i("TAG", "onPermissionGranted : " + requestCode);
 
     }
 
     @Override
     public void deniedPermissionAccess(int requestCode) {
 
-        Log.i("anshul", "deniedPermissionAccess : " + requestCode);
+        Log.i("TAG", "deniedPermissionAccess : " + requestCode);
 
     }
 
     @Override
     public void removedPermissionAccess(int requestCode) {
-        Log.i("anshul", "removedPermissionAccess : " + requestCode);
+        Log.i("TAG", "removedPermissionAccess : " + requestCode);
     }
 }
