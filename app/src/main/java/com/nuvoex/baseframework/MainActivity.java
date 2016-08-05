@@ -64,14 +64,14 @@ public class MainActivity extends LumiereBaseActivity implements Permission.Frag
     }
 
     @Override
-    public void OnPermissionDenied(int requestCode) {
+    public void onPermissionDenied(int requestCode) {
 
-        Log.i("TAG", "OnPermissionDenied : " + requestCode);
+        Log.i("TAG", "onPermissionDenied : " + requestCode);
 
     }
 
     @Override
-    public void OnPermissionAccessRemoved(int requestCode) {
-        Log.i("TAG", "OnPermissionAccessRemoved : " + requestCode);
+    public void onPermissionAccessRemoved(int requestCode) {
+        Log.i("TAG", "onPermissionAccessRemoved : " + requestCode);
     }
 }

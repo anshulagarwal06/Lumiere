@@ -119,7 +119,7 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
     private void showRationalMessage(int requestCode) {
 
         if (mPermission.showCustomRationalDialog) {
-            mFragmentPermissionCallback.OnPermissionDenied(requestCode);
+            mFragmentPermissionCallback.onPermissionDenied(requestCode);
         } else {
             showRequestPermissionDialog();
         }
@@ -128,7 +128,7 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
     private void doNotAskedEnable(int requestCode) {
 
         if (mPermission.showCustomSettingDialog) {
-            mFragmentPermissionCallback.OnPermissionAccessRemoved(requestCode);
+            mFragmentPermissionCallback.onPermissionAccessRemoved(requestCode);
         } else {
             showSettingsPermissionDialog();
         }
