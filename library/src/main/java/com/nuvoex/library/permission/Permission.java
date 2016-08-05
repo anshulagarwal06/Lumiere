@@ -88,9 +88,9 @@ public class Permission {
     public interface FragmentPermissionCallback {
         void onPermissionGranted(int requestCode);
 
-        void deniedPermissionAccess(int requestCode);
+        void OnPermissionDenied(int requestCode);
 
-        void removedPermissionAccess(int requestCode);
+        void OnPermissionAccessRemoved(int requestCode);
 
     }
 
