@@ -10,7 +10,7 @@ import com.nuvoex.library.permission.Permission;
 import com.nuvoex.library.permission.Permission.PermissionBuilder;
 
 
-public class MainActivity extends LumiereBaseActivity implements Permission.FragmentPermissionCallback {
+public class MainActivity extends LumiereBaseActivity implements Permission.PermissionCallback {
 
     private final static String TAG= MainActivity.class.getSimpleName();
 

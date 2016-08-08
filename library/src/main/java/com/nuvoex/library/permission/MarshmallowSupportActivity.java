@@ -21,13 +21,13 @@ import com.nuvoex.library.R;
 public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
 
-    public Permission.FragmentPermissionCallback mFragmentPermissionCallback = null;
+    public Permission.PermissionCallback mPermissionCallback = null;
     private Permission mPermission = null;
 
     public void requestAppPermissions(@NonNull Permission permission) {
         mPermission = permission;
-        mFragmentPermissionCallback = mPermission.mFragmentPermissionCallback;
-        requestAppPermissions(mPermission.requestedPermissions, mPermission.requestCode, mPermission.mFragmentPermissionCallback);
+        mPermissionCallback = mPermission.getPermissionCallback();
+        requestAppPermissions(mPermission.getRequestedPermissions(), mPermission.getRequestCode(), mPermission.getPermissionCallback());
     }
 
 
@@ -36,7 +36,7 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
         if (verifyPermissions(grantResults)) {
-            mFragmentPermissionCallback.onPermissionGranted(requestCode);
+            mPermissionCallback.onPermissionGranted(requestCode);
         } else {
             boolean showRationale = shouldShowRequestPermissionRationale(permissions);
             if (!showRationale) {
@@ -48,7 +48,7 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
     }
 
-    private void requestAppPermissions(final String[] requestedPermissions, final int requestCode, @Nullable Permission.FragmentPermissionCallback permissionCallback) {
+    private void requestAppPermissions(final String[] requestedPermissions, final int requestCode, @Nullable Permission.PermissionCallback permissionCallback) {
         if (!hasPermissions(requestedPermissions)) {
             if (shouldShowRequestPermissionRationale(requestedPermissions)) {
                 showRationalMessage(requestCode);
@@ -56,7 +56,7 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
                 ActivityCompat.requestPermissions(MarshmallowSupportActivity.this, requestedPermissions, requestCode);
             }
         } else {
-            mFragmentPermissionCallback.onPermissionGranted(requestCode);
+            mPermissionCallback.onPermissionGranted(requestCode);
         }
     }
 
@@ -94,19 +94,19 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
 
     private void showRequestPermissionDialog() {
-        String message = mPermission.rationalDialogMessage;
+        String message = mPermission.getRationalDialogMessage();
         String positiveButton = getString(R.string.rational_permission_proceed);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage(message);
 
-        if (!TextUtils.isEmpty(mPermission.rationalDialogTitle)) {
-            alertDialogBuilder.setTitle(mPermission.rationalDialogTitle);
+        if (!TextUtils.isEmpty(mPermission.getRationalDialogTitle())) {
+            alertDialogBuilder.setTitle(mPermission.getRationalDialogTitle());
 
         }
         alertDialogBuilder.setPositiveButton(positiveButton, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface arg0, int arg1) {
-                ActivityCompat.requestPermissions(MarshmallowSupportActivity.this, mPermission.requestedPermissions, mPermission.requestCode);
+                ActivityCompat.requestPermissions(MarshmallowSupportActivity.this, mPermission.getRequestedPermissions(), mPermission.getRequestCode());
             }
         });
 
@@ -118,8 +118,8 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
     private void showRationalMessage(int requestCode) {
 
-        if (mPermission.showCustomRationalDialog) {
-            mFragmentPermissionCallback.onPermissionDenied(requestCode);
+        if (mPermission.isShowCustomRationalDialog()) {
+            mPermissionCallback.onPermissionDenied(requestCode);
         } else {
             showRequestPermissionDialog();
         }
@@ -127,8 +127,8 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
     private void doNotAskedEnable(int requestCode) {
 
-        if (mPermission.showCustomSettingDialog) {
-            mFragmentPermissionCallback.onPermissionAccessRemoved(requestCode);
+        if (mPermission.isShowCustomSettingDialog()) {
+            mPermissionCallback.onPermissionAccessRemoved(requestCode);
         } else {
             showSettingsPermissionDialog();
         }
@@ -136,13 +136,13 @@ public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
     private void showSettingsPermissionDialog() {
 
-        String message = mPermission.settingDialogMessage;
+        String message = mPermission.getSettingDialogMessage();
         String positiveButton = getString(R.string.permission_string_btn);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
         alertDialogBuilder.setMessage(message);
 
-        if (!TextUtils.isEmpty(mPermission.settingDialogTitle)) {
-            alertDialogBuilder.setTitle(mPermission.settingDialogTitle);
+        if (!TextUtils.isEmpty(mPermission.getSettingDialogTitle())) {
+            alertDialogBuilder.setTitle(mPermission.getSettingDialogTitle());
 
         }
         alertDialogBuilder.setPositiveButton(positiveButton, new DialogInterface.OnClickListener() {

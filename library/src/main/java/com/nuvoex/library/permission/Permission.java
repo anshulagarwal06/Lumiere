@@ -8,23 +8,23 @@ import android.support.annotation.NonNull;
 public class Permission {
 
 
-    String[] requestedPermissions;
-    int requestCode;
-    public FragmentPermissionCallback mFragmentPermissionCallback = null;
+    private String[] requestedPermissions;
+    private int requestCode;
+    private PermissionCallback mPermissionCallback = null;
 
     //Custom Rational Dialog
-    boolean showCustomRationalDialog = true;
-    String rationalDialogTitle;
-    String rationalDialogMessage;
+    private boolean showCustomRationalDialog = true;
+    private String rationalDialogTitle;
+    private String rationalDialogMessage;
     //Custom Setting Dialog
-    boolean showCustomSettingDialog = true;
-    String settingDialogTitle;
-    String settingDialogMessage;
+    private boolean showCustomSettingDialog = true;
+    private String settingDialogTitle;
+    private String settingDialogMessage;
 
     private Permission(PermissionBuilder builder) {
         requestedPermissions = builder.requestedPermissions;
         requestCode = builder.requestCode;
-        mFragmentPermissionCallback = builder.mFragmentPermissionCallback;
+        mPermissionCallback = builder.mPermissionCallback;
 
         showCustomRationalDialog = builder.showCustomRationDialog;
         if (!showCustomRationalDialog) {
@@ -40,6 +40,41 @@ public class Permission {
 
     }
 
+    public String[] getRequestedPermissions() {
+        return requestedPermissions;
+    }
+
+    public int getRequestCode() {
+        return requestCode;
+    }
+
+    public PermissionCallback getPermissionCallback() {
+        return mPermissionCallback;
+    }
+
+    public boolean isShowCustomRationalDialog() {
+        return showCustomRationalDialog;
+    }
+
+    public String getRationalDialogTitle() {
+        return rationalDialogTitle;
+    }
+
+    public String getRationalDialogMessage() {
+        return rationalDialogMessage;
+    }
+
+    public boolean isShowCustomSettingDialog() {
+        return showCustomSettingDialog;
+    }
+
+    public String getSettingDialogTitle() {
+        return settingDialogTitle;
+    }
+
+    public String getSettingDialogMessage() {
+        return settingDialogMessage;
+    }
 
     public static class PermissionBuilder {
 
@@ -57,12 +92,12 @@ public class Permission {
         private String settingDialogMessage;
 
 
-        public FragmentPermissionCallback mFragmentPermissionCallback = null;
+        public PermissionCallback mPermissionCallback = null;
 
-        public PermissionBuilder(final String[] requestedPermissions, final int requestCode, @NonNull FragmentPermissionCallback listener) {
+        public PermissionBuilder(final String[] requestedPermissions, final int requestCode, @NonNull PermissionCallback listener) {
             this.requestedPermissions = requestedPermissions;
             this.requestCode = requestCode;
-            this.mFragmentPermissionCallback = listener;
+            this.mPermissionCallback = listener;
         }
 
 
@@ -85,7 +120,7 @@ public class Permission {
         }
     }
 
-    public interface FragmentPermissionCallback {
+    public interface PermissionCallback {
         void onPermissionGranted(int requestCode);
 
         void onPermissionDenied(int requestCode);
