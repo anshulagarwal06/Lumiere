@@ -21,7 +21,7 @@ import com.nuvoex.library.R;
 public abstract class MarshmallowSupportActivity extends AppCompatActivity {
 
 
-    public Permission.PermissionCallback mPermissionCallback = null;
+    private Permission.PermissionCallback mPermissionCallback = null;
     private Permission mPermission = null;
 
     public void requestAppPermissions(@NonNull Permission permission) {
