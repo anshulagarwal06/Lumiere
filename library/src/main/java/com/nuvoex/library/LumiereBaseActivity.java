@@ -18,10 +18,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nuvoex.library.permission.MarshmallowSupportActivity;
+
 import icepick.Icepick;
 import timber.log.Timber;
 
-public abstract class LumiereBaseActivity extends AppCompatActivity implements FragmentInterface,
+public abstract class LumiereBaseActivity extends MarshmallowSupportActivity implements FragmentInterface,
         NavigationView.OnNavigationItemSelectedListener {
 
     /**
