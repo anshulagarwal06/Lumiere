@@ -311,4 +311,10 @@ public abstract class LumiereBaseActivity extends MarshmallowSupportActivity imp
     public interface RetryApiCallback {
         void retry();
     }
+
+    public void dummy() {
+        int dummy = 0;
+        dummy = dummy + 3;
+        Timber.d("Dummy is " + String.valueOf(dummy));
+    }
 }

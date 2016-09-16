@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import com.squareup.leakcanary.RefWatcher;
 
 import icepick.Icepick;
+import timber.log.Timber;
 
 /**
  * All Fragments must extend From BaseFragment.
