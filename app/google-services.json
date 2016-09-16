@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "914549052003",
+    "firebase_url": "https://base-framework-82674.firebaseio.com",
+    "project_id": "base-framework-82674",
+    "storage_bucket": "base-framework-82674.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914549052003:android:1787665ed2f4ff89",
+        "android_client_info": {
+          "package_name": "com.nuvoex.baseframework"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914549052003-orna1ch862vjn21ughufab38jl2d6ui8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPlTFTYC-FVjrgG8sy7cEMBPUmxZHaluc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
