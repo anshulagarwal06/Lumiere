@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.MenuItem;
 
 import com.nuvoex.library.LumiereBaseActivity;
+import com.nuvoex.library.analytics.Analytics;
+import com.nuvoex.library.analytics.AnalyticsService;
 import com.nuvoex.library.permission.Permission;
 import com.nuvoex.library.permission.Permission.PermissionBuilder;
 
@@ -22,6 +24,9 @@ public class MainActivity extends LumiereBaseActivity implements Permission.Perm
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkPermissionCamera();
+
+        AnalyticsService service = Analytics.getService(this);
+        service.trackView("Home", null);
     }
 
     private void checkPermissionCamera() {

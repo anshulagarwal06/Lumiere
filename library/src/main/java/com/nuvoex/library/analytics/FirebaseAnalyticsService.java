@@ -22,8 +22,9 @@ public class FirebaseAnalyticsService implements AnalyticsService {
         if (params != null) {
             bundle.putAll(params);
         }
-        bundle.putString("event_type", "screen_view");
-        mFirebaseAnalytics.logEvent(name, bundle);
+        bundle.putString(FirebaseAnalytics.Param.ITEM_CATEGORY, "screen");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, name);
+        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle);
     }
 
     @Override
