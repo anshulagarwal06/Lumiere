@@ -11,6 +11,9 @@ import com.nuvoex.library.analytics.AnalyticsService;
 import com.nuvoex.library.permission.Permission;
 import com.nuvoex.library.permission.Permission.PermissionBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class MainActivity extends LumiereBaseActivity implements Permission.PermissionCallback {
 
@@ -26,7 +29,8 @@ public class MainActivity extends LumiereBaseActivity implements Permission.Perm
         checkPermissionCamera();
 
         AnalyticsService service = Analytics.getService(this);
-        service.trackView("Home", null);
+        Map<String, String> params = new HashMap<>();
+        service.trackView("Home", params);
     }
 
     private void checkPermissionCamera() {
